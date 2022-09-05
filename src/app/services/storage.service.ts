@@ -42,7 +42,7 @@ export class StorageService {
   async loadFavorites(){
     try {
       const articles = await this._storage.get('articles');
-      this._localArticles = articles;
+      this._localArticles = articles || [];
     } catch (error) {
       console.log(error);
     }
